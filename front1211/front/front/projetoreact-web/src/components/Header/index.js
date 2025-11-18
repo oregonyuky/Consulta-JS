@@ -4,7 +4,7 @@ import * as Styl from './styles'
 import logo from '../../assets/logo.png'
 import sino from '../../assets/sino.png'
 
-function Header() {
+function Header({atrasadas, notificacaoClick}) {
   return (
     <Styl.Container>
         <Styl.Esq>
@@ -15,10 +15,10 @@ function Header() {
           <span className="divisor"/>
           <a href='#'>Nova consulta</a>
           <span className="divisor"/>
-          <a href='#' id="notificacao">
+          <button onClick={notificacaoClick} id="notificacao">
               <img src={sino} alt="Notificação"/>
-              <span>5</span>
-          </a>
+              <span>{atrasadas}</span>
+          </button>
 
         </Styl.Dir>
     </Styl.Container>

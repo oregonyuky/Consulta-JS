@@ -10,12 +10,7 @@ import api from '../../services/api'
 
 function Home() {
   
-  
-
-
-
-
-
+ 
 //constante (vetor) que irá armazenar o estado da prop ativo
 //vetor - 2 parâmetros
 //1º nome do estado
@@ -37,16 +32,32 @@ async function carregarConsulta() {
     console.log(response.data)
   })
 }
+const [atrasadas, atualizaAtrasadas] = useState()
+ 
+ async function verificaAtrasadas() {
+    await api.get(`/consulta/atrasadas`)
+    .then(resp=>{
+      //quantidade de consultas atrasadas
+      atualizaAtrasadas(resp.data.length)
+    }) 
+ }
+
+
+ //função para chamar no notificacaoClick
+ function notificacao(){
+  atualizarFiltroAtivo('atrasadas')
+ }
 
 //useEffect -- > atualizar a página quando carregar o estado
 useEffect(()=>{
   carregarConsulta()
+  verificaAtrasadas()
 }, [filtroConsulta])
 
 
   return  (
     <Styl.Container>
-      <Header/>
+      <Header atrasadas={atrasadas} notificacaoClick={notificacao}/>
         <Styl.AreaFiltro>
           <button type='button' onClick={()=>atualizarFiltroAtivo("todas")}>
               <FiltrarConsulta titulo="Todas" ativo={filtroConsulta=="todas"}/>
@@ -69,10 +80,16 @@ useEffect(()=>{
           <h3>Consultas</h3>
         </Styl.Titulo>
         <Styl.Cartao>
-            <ConsultaCartao/>
-            <ConsultaCartao/>
-            <ConsultaCartao/>
-            <ConsultaCartao/>
+            {
+              consulta.map(c=>(
+                <ConsultaCartao
+                tipo={c.tipo}
+                paciente={c.paciente}
+                descricao={c.descricao}
+                data={c.data}
+                />
+              ))
+            }
         </Styl.Cartao>
 
 

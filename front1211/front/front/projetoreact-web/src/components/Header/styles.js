@@ -30,6 +30,12 @@ export const Dir = styled.div`
     /*começar do final da caixa - canto direito*/
     justify-content: flex-end;
 
+    button{
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
     a{
         /*colocar icone com a cor branca*/
         color: #FFF;
