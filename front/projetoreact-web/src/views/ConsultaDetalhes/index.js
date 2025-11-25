@@ -33,6 +33,7 @@ function Detalhes() {
                                 </button>
                             ))
                         }
+                    </Styl.TipoConsulta>
                         <Styl.Input>
                             <span>Paciente</span>
                             <input type='text' placeholder='Nome do paciente'/>
@@ -59,9 +60,6 @@ function Detalhes() {
                         <Styl.Salvar>
                             <button type='button'>SALVAR</button>
                         </Styl.Salvar>
-
-
-                    </Styl.TipoConsulta>
                 </Styl.Formulario>
             <Footer/>
         </Styl.Container>

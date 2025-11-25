@@ -6,7 +6,7 @@ import Detalhes from './views/ConsultaDetalhes';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Detalhes />
+    <Home />
   </React.StrictMode>
 );
 

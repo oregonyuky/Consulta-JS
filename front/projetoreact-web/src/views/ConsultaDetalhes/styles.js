@@ -8,6 +8,7 @@ export const Container = styled.div `
     display: flex;
     flex-direction: column;
     align-items: center;
+
 `
 
 
@@ -50,7 +51,7 @@ export const Input = styled.div `
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin:v20px 0;
+    margin: 20px 0;
      span{
         color: #707070;
         margin-bottom: 5px;
@@ -59,7 +60,7 @@ export const Input = styled.div `
         font-size: 16px;
         padding: 15px;
         border: none;
-        boder-bottom: 1px solid #22B14C;
+        border-bottom: 1px solid #22B14C;
     }
 `
 
@@ -75,14 +76,14 @@ export const TextArea = styled.div `
      }
     textarea{
         font-size: 16px;
-        boder: 1px solid #22B14C;
+        border: 1px solid #22B14C;
     }
 `
 
 
 export const Opcao = styled.div `
     width: 100%;
-    diplay: flex;
+    display: flex;
     justify-content: space-between;
     button{
         font-weight: bold;
@@ -96,7 +97,7 @@ export const Opcao = styled.div `
         }
     }
     div{
-        diplay:flex;
+        display: flex;
         align-items: center;
         color: #22B14C;
         font-weight: bold;

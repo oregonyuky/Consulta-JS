@@ -11,7 +11,7 @@ function Header({atrasadas, notificacaoClick}) {
             <img src={logo} alt="Logo"/>
         </Styl.Esq>
         <Styl.Dir>
-          <a href='#'>Início</a>
+          <a href='/consulta/'>Início</a>
           <span className="divisor"/>
           <a href='#'>Nova consulta</a>
           <span className="divisor"/>
